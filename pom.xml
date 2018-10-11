@@ -67,7 +67,6 @@
             <groupId>net.ttddyy</groupId>
             <artifactId>datasource-proxy</artifactId>
             <version>1.4.6</version>
-            <scope>compile</scope>
         </dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
