@@ -27,7 +27,6 @@
     <name>Spring Data JPA simple repository sample</name>
     <description>This sample shows you how to implement a simple repository with Spring Data JPA (and Spring Boot)</description>
 
-
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
