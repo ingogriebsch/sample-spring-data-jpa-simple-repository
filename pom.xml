@@ -26,6 +26,9 @@
 
     <name>Spring Data JPA simple repository sample</name>
     <description>This sample shows you how to implement a simple repository with Spring Data JPA (and Spring Boot)</description>
+    <url>https://github.com/ingogriebsch/sample-spring-web-simple-repository</url>
+    <inceptionYear>2018</inceptionYear>
+    <organization />
 
     <licenses>
         <license>
@@ -34,6 +37,10 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
+    <scm>
+        <url>${project.url}</url>
+    </scm>
 
     <developers>
         <developer>
@@ -45,10 +52,15 @@
         </developer>
     </developers>
 
+	<issueManagement>
+	    <url>${project.url}/issues</url>
+	    <system>GitHub</system>
+	</issueManagement>    
+
     <properties>
+        <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
     </properties>
 
 	<dependencies>
