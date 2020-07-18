@@ -11,6 +11,7 @@ package com.github.ingogriebsch.sample.spring.data.jpa.repository;
 
 import java.util.List;
 
+import com.google.common.collect.Lists;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.RandomUtils;
 import org.assertj.core.api.Assertions;
@@ -20,8 +21,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import com.google.common.collect.Lists;
 
 @DataJpaTest
 @RunWith(SpringRunner.class)
