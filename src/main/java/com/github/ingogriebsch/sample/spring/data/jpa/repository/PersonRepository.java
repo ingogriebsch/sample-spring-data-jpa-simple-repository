@@ -15,14 +15,10 @@
  */
 package com.github.ingogriebsch.sample.spring.data.jpa.repository;
 
-import static org.springframework.transaction.annotation.Propagation.MANDATORY;
-
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-@Transactional(propagation = MANDATORY)
 interface PersonRepository extends CrudRepository<Person, String> {
 
     Iterable<Person> findByName(String name);
