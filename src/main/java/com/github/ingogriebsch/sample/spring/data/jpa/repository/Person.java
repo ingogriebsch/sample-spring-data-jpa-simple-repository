@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @NoArgsConstructor
-public class Person {
+class Person {
 
     @Id
     private String id;

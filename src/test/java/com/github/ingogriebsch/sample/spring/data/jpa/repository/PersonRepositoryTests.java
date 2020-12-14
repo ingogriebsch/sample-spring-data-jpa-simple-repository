@@ -31,7 +31,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @DataJpaTest
 @RunWith(SpringRunner.class)
-public class PersonRepositoryTests {
+class PersonRepositoryTests {
 
     @Autowired
     private PersonRepository personRepository;
@@ -39,7 +39,7 @@ public class PersonRepositoryTests {
     private TestEntityManager entityManager;
 
     @Test
-    public void findOneShouldReturnMatchingEntityIfAvailable() throws Exception {
+    void findOneShouldReturnMatchingEntityIfAvailable() throws Exception {
         Person person = new Person(randomId(), "Ingo", 44);
 
         entityManager.persistAndFlush(person);
@@ -49,13 +49,13 @@ public class PersonRepositoryTests {
     }
 
     @Test
-    public void findOneShouldReturnNullIfNotAvailable() throws Exception {
+    void findOneShouldReturnNullIfNotAvailable() throws Exception {
         Optional<Person> found = personRepository.findById(randomId());
         Assertions.assertThat(found).isNotNull().isEmpty();
     }
 
     @Test
-    public void insertShouldPersistEntity() throws Exception {
+    void insertShouldPersistEntity() throws Exception {
         Person person = new Person(randomId(), "Ingo", 44);
 
         Assertions.assertThat(personRepository.findById(person.getId())).isNotNull().isEmpty();
@@ -69,7 +69,7 @@ public class PersonRepositoryTests {
 
     @Test
     // Start transaction
-    public void findByNameShouldReturnMatchingEntitiesIfAvailable() throws Exception {
+    void findByNameShouldReturnMatchingEntitiesIfAvailable() throws Exception {
         List<Person> persons = Lists.newArrayList(new Person(randomId(), "Ingo", 44), new Person(randomId(), "Jan", 32),
             new Person(randomId(), "Stephan", 34));
         persons.stream().forEach(p -> entityManager.persistAndFlush(p));

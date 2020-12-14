@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 @Transactional(propagation = MANDATORY)
-public interface PersonRepository extends CrudRepository<Person, String> {
+interface PersonRepository extends CrudRepository<Person, String> {
 
     Iterable<Person> findByName(String name);
 

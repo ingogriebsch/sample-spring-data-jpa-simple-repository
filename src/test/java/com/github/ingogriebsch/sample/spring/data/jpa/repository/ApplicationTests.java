@@ -21,11 +21,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
 
-@RunWith(SpringRunner.class)
-public class ApplicationTests {
+@SpringBootTest
+class ApplicationTest {
 
     @Test
-    public void main_should_load_context() {
+    void main_should_load_context() {
         main(new String[] { "--server.port=0" });
     }
 
