@@ -17,9 +17,8 @@ package com.github.ingogriebsch.sample.spring.data.jpa.repository;
 
 import static com.github.ingogriebsch.sample.spring.data.jpa.repository.Application.main;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class ApplicationTest {
@@ -28,5 +27,4 @@ class ApplicationTest {
     void main_should_load_context() {
         main(new String[] { "--server.port=0" });
     }
-
 }

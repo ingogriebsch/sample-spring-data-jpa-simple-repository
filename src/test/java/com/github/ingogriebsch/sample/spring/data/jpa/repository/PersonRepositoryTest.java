@@ -15,23 +15,21 @@
  */
 package com.github.ingogriebsch.sample.spring.data.jpa.repository;
 
+import static com.google.common.collect.Lists.newArrayList;
+import static org.apache.commons.lang3.RandomUtils.nextInt;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import java.util.List;
 import java.util.Optional;
 
-import com.google.common.collect.Lists;
 import org.apache.commons.lang3.RandomStringUtils;
-import org.apache.commons.lang3.RandomUtils;
-import org.assertj.core.api.Assertions;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.test.context.junit4.SpringRunner;
 
 @DataJpaTest
-@RunWith(SpringRunner.class)
-class PersonRepositoryTests {
+class PersonRepositoryTest {
 
     @Autowired
     private PersonRepository personRepository;
@@ -39,45 +37,62 @@ class PersonRepositoryTests {
     private TestEntityManager entityManager;
 
     @Test
-    void findOneShouldReturnMatchingEntityIfAvailable() throws Exception {
+    // Start transaction
+    void findById_should_return_matching_entity_if_available() throws Exception {
+        // given
         Person person = new Person(randomId(), "Ingo", 44);
-
         entityManager.persistAndFlush(person);
+
+        // when
         Optional<Person> found = personRepository.findById(person.getId());
 
-        Assertions.assertThat(found).isNotNull().get().isEqualTo(person);
+        // then
+        assertThat(found).isNotNull().get().isEqualTo(person);
     }
-
-    @Test
-    void findOneShouldReturnNullIfNotAvailable() throws Exception {
-        Optional<Person> found = personRepository.findById(randomId());
-        Assertions.assertThat(found).isNotNull().isEmpty();
-    }
-
-    @Test
-    void insertShouldPersistEntity() throws Exception {
-        Person person = new Person(randomId(), "Ingo", 44);
-
-        Assertions.assertThat(personRepository.findById(person.getId())).isNotNull().isEmpty();
-
-        personRepository.save(person);
-        entityManager.flush();
-
-        Optional<Person> found = personRepository.findById(person.getId());
-        Assertions.assertThat(found).isNotNull().get().isEqualTo(person);
-    }
+    // Rollback transaction
 
     @Test
     // Start transaction
-    void findByNameShouldReturnMatchingEntitiesIfAvailable() throws Exception {
-        List<Person> persons = Lists.newArrayList(new Person(randomId(), "Ingo", 44), new Person(randomId(), "Jan", 32),
-            new Person(randomId(), "Stephan", 34));
-        persons.stream().forEach(p -> entityManager.persistAndFlush(p));
-        Person person = persons.get(RandomUtils.nextInt(0, persons.size()));
+    void findById_should_return_null_if_not_available() throws Exception {
+        // given... then... when
+        assertThat(personRepository.findById(randomId())).isNotNull().isEmpty();
+    }
+    // Rollback transaction
 
+    @Test
+    // Start transaction
+    void insert_should_persist_entity() throws Exception {
+        // given
+        Person person = new Person(randomId(), "Ingo", 44);
+
+        // when
+        personRepository.save(person);
+        entityManager.flush();
+
+        // then
+        Optional<Person> found = personRepository.findById(person.getId());
+        assertThat(found).isNotNull().get().isEqualTo(person);
+    }
+    // Rollback transaction
+
+    @Test
+    // Start transaction
+    void findByName_should_return_matching_entities_if_available() throws Exception {
+        // given
+        List<Person> persons = newArrayList( //
+            new Person(randomId(), "Ingo", 44), //
+            new Person(randomId(), "Jan", 32), //
+            new Person(randomId(), "Stephan", 34) //
+        );
+        persons.forEach(p -> entityManager.persistAndFlush(p));
+
+        // when
+        Person person = persons.get(nextInt(0, persons.size()));
         Iterable<Person> found = personRepository.findByName(person.getName());
-        Assertions.assertThat(found).isNotNull().hasSize(1);
-        Assertions.assertThat(found.iterator().next()).isEqualTo(person);
+
+        // then
+        assertThat(found).isNotNull().hasSize(1);
+        assertThat(found.iterator().next()).isEqualTo(person);
     }
     // Rollback transaction
 
