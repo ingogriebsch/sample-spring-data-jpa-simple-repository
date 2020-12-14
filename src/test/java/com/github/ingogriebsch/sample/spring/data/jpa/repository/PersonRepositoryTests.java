@@ -16,6 +16,7 @@
 package com.github.ingogriebsch.sample.spring.data.jpa.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -42,30 +43,28 @@ public class PersonRepositoryTests {
         Person person = new Person(randomId(), "Ingo", 44);
 
         entityManager.persistAndFlush(person);
-        Person found = personRepository.findOne(person.getId());
+        Optional<Person> found = personRepository.findById(person.getId());
 
-        Assertions.assertThat(found).isNotNull();
-        Assertions.assertThat(found).isEqualTo(person);
+        Assertions.assertThat(found).isNotNull().get().isEqualTo(person);
     }
 
     @Test
     public void findOneShouldReturnNullIfNotAvailable() throws Exception {
-        Person found = personRepository.findOne(randomId());
-        Assertions.assertThat(found).isNull();
+        Optional<Person> found = personRepository.findById(randomId());
+        Assertions.assertThat(found).isNotNull().isEmpty();
     }
 
     @Test
     public void insertShouldPersistEntity() throws Exception {
         Person person = new Person(randomId(), "Ingo", 44);
 
-        Assertions.assertThat(personRepository.findOne(person.getId())).isNull();
+        Assertions.assertThat(personRepository.findById(person.getId())).isNotNull().isEmpty();
 
         personRepository.save(person);
         entityManager.flush();
 
-        Person found = personRepository.findOne(person.getId());
-        Assertions.assertThat(found).isNotNull();
-        Assertions.assertThat(found).isEqualTo(person);
+        Optional<Person> found = personRepository.findById(person.getId());
+        Assertions.assertThat(found).isNotNull().get().isEqualTo(person);
     }
 
     @Test
