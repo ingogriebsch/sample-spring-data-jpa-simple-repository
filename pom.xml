@@ -16,7 +16,7 @@
     <packaging>jar</packaging>
 
     <name>Spring Data JPA simple repository sample</name>
-    <description>This sample shows you how to implement a simple repository with Spring Data JPA (and Spring Boot)</description>
+    <description>This sample shows how to implement a simple repository with Spring Data JPA (and Spring Boot)</description>
     <url>https://github.com/ingogriebsch/sample-spring-data-jpa-simple-repository</url>
     <inceptionYear>2018</inceptionYear>
     <organization>
@@ -106,7 +106,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-    </dependencies>
+     </dependencies>
 
     <build>
         <pluginManagement>
