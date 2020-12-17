@@ -15,8 +15,11 @@
  */
 package com.github.ingogriebsch.sample.spring.data.jpa.repository;
 
+import static java.lang.String.format;
+
 import static com.google.common.collect.Sets.newHashSet;
-import static org.apache.commons.lang3.RandomStringUtils.randomAlphanumeric;
+
+import java.util.Set;
 
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
@@ -34,15 +37,17 @@ class PersonImporter implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        newHashSet(person("Ingo", 44), person("Marcel", 33), person("Sophia", 21)).stream().forEach(p -> insert(p));
+        Set<Person> persons = newHashSet(person("Ingo", 44), person("Marcel", 33), person("Sophia", 21));
+        persons.forEach(p -> insert(p));
+        log.info(format("%d persons successfully imported and ready to be accessed!", persons.size()));
     }
 
     private void insert(Person person) {
         personRepository.save(person);
-        log.info("Inserting person '{}'...", person);
+        log.info("Import person '{}'...", person);
     }
 
     private static Person person(String name, Integer age) {
-        return new Person(randomAlphanumeric(8), name, age);
+        return new Person(name, age);
     }
 }

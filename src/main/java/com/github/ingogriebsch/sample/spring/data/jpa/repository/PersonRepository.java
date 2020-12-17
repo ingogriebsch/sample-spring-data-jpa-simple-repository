@@ -17,10 +17,12 @@ package com.github.ingogriebsch.sample.spring.data.jpa.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
-interface PersonRepository extends CrudRepository<Person, String> {
+interface PersonRepository extends CrudRepository<Person, Long> {
 
+    @Transactional(readOnly = true)
     Iterable<Person> findByName(String name);
 
 }

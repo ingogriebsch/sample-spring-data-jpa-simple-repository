@@ -22,7 +22,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 import java.util.Optional;
 
-import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -40,7 +39,7 @@ class PersonRepositoryTest {
     // Start transaction
     void findById_should_return_matching_entity_if_available() throws Exception {
         // given
-        Person person = new Person(randomId(), "Ingo", 44);
+        Person person = new Person("Ingo", 44);
         entityManager.persistAndFlush(person);
 
         // when
@@ -55,7 +54,7 @@ class PersonRepositoryTest {
     // Start transaction
     void findById_should_return_null_if_not_available() throws Exception {
         // given... then... when
-        assertThat(personRepository.findById(randomId())).isNotNull().isEmpty();
+        assertThat(personRepository.findById(1L)).isNotNull().isEmpty();
     }
     // Rollback transaction
 
@@ -63,7 +62,7 @@ class PersonRepositoryTest {
     // Start transaction
     void insert_should_persist_entity() throws Exception {
         // given
-        Person person = new Person(randomId(), "Ingo", 44);
+        Person person = new Person("Ingo", 44);
 
         // when
         personRepository.save(person);
@@ -80,9 +79,9 @@ class PersonRepositoryTest {
     void findByName_should_return_matching_entities_if_available() throws Exception {
         // given
         List<Person> persons = newArrayList( //
-            new Person(randomId(), "Ingo", 44), //
-            new Person(randomId(), "Jan", 32), //
-            new Person(randomId(), "Stephan", 34) //
+            new Person("Ingo", 44), //
+            new Person("Jan", 32), //
+            new Person("Stephan", 34) //
         );
         persons.forEach(p -> entityManager.persistAndFlush(p));
 
@@ -95,9 +94,5 @@ class PersonRepositoryTest {
         assertThat(found.iterator().next()).isEqualTo(person);
     }
     // Rollback transaction
-
-    private static String randomId() {
-        return RandomStringUtils.randomAlphanumeric(8);
-    }
 
 }

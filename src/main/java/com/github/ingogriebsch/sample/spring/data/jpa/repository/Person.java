@@ -15,21 +15,30 @@
  */
 package com.github.ingogriebsch.sample.spring.data.jpa.repository;
 
+import static lombok.AccessLevel.PACKAGE;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
 @Data
 @Entity
-@NoArgsConstructor
+@EqualsAndHashCode(of = "id")
+@NoArgsConstructor(access = PACKAGE)
 class Person {
 
+    @GeneratedValue
     @Id
-    private String id;
+    private Long id;
     private String name;
     private Integer age;
+
+    Person(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
 }
