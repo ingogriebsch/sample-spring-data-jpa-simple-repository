@@ -11,7 +11,7 @@ This sample shows how to implement a simple repository with Spring Data JPA (and
 If you want to see the implementation in action, simply follow these steps:
 
 *   First, make sure that you have Java 8 or later installed and an established Internet connection.
-*   Then, clone this Git repository an `cd` into folder `spring-web-simple-restcontroller`. 
+*   Then, clone this Git repository an `cd` into the project folder.
 *   Now invoke `./mvnw spring-boot:run` and wait a moment.
 
 After the project is built and the Spring Boot service is running you can hit the following urls to act with the service:
@@ -24,16 +24,16 @@ A collection of the most important annotations and classes that are necessary to
 
 *   [@GeneratedValue](https://javaee.github.io/javaee-spec/javadocs/javax/persistence/GeneratedValue.html)
 *   [@Id](https://javaee.github.io/javaee-spec/javadocs/javax/persistence/Id.html)
-*   [@Repository](https://docs.spring.io/spring-data/commons/docs/2.3.5.RELEASE/api/org/springframework/data/repository/Repository.html)
-*   [@Transactional](https://docs.spring.io/spring-framework/docs/5.2.9.RELEASE/javadoc-api/org/springframework/transaction/annotation/Transactional.html)
-*   [@DataJpaTest](https://docs.spring.io/spring-boot/docs/2.3.6.RELEASE/api/org/springframework/boot/test/autoconfigure/orm/jpa/DataJpaTest.html)
+*   [@Repository](https://docs.spring.io/spring-data/commons/docs/2.4.2/api/org/springframework/data/repository/Repository.html)
+*   [@Transactional](https://docs.spring.io/spring-framework/docs/5.3.2/javadoc-api/org/springframework/transaction/annotation/Transactional.html)
+*   [@DataJpaTest](https://docs.spring.io/spring-boot/docs/2.4.1/api/org/springframework/boot/test/autoconfigure/orm/jpa/DataJpaTest.html)
 
 ## Used frameworks
 A collection of the mainly used frameworks in this project. 
 There are more, but they are not that present inside the main use case, therefore they are not listed here.
 
-*   [Spring Data JPA](https://docs.spring.io/spring-data/jpa/docs/2.3.5.RELEASE/reference/html/)
-*   [Spring Boot](https://docs.spring.io/spring-boot/docs/2.3.6.RELEASE/reference/htmlsingle/)
+*   [Spring Data JPA](https://docs.spring.io/spring-data/jpa/docs/2.4.2/reference/html/)
+*   [Spring Boot](https://docs.spring.io/spring-boot/docs/2.4.1/reference/htmlsingle/)
 
 ## Additional guides
 The following guides illustrate how to implement this and related use cases.
