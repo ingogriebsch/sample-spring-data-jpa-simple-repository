@@ -1,6 +1,5 @@
 # Spring Data JPA simple repository sample
 [![Actions Status](https://github.com/ingogriebsch/sample-spring-data-jpa-simple-repository/workflows/build/badge.svg)](https://github.com/ingogriebsch/sample-spring-data-jpa-simple-repository/actions)
-[![Codacy Status](https://api.codacy.com/project/badge/Grade/7bff64a64d5c4df993dc98998843a5c0)](https://app.codacy.com/app/ingo.griebsch/sample-spring-data-jpa-simple-repository?utm_source=github.com&utm_medium=referral&utm_content=ingogriebsch/sample-spring-data-jpa-simple-repository&utm_campaign=Badge_Grade_Dashboard)
 [![DepShield Status](https://depshield.sonatype.org/badges/ingogriebsch/sample-spring-data-jpa-simple-repository/depshield.svg)](https://depshield.github.io)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
