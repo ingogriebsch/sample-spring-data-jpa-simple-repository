@@ -1,6 +1,5 @@
 # Spring Data JPA simple repository sample
 [![Actions Status](https://github.com/ingogriebsch/sample-spring-data-jpa-simple-repository/workflows/build/badge.svg)](https://github.com/ingogriebsch/sample-spring-data-jpa-simple-repository/actions)
-[![DepShield Status](https://depshield.sonatype.org/badges/ingogriebsch/sample-spring-data-jpa-simple-repository/depshield.svg)](https://depshield.github.io)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 This sample shows how to implement a simple repository with Spring Data JPA (and Spring Boot).
