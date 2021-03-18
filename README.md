@@ -1,10 +1,10 @@
 # Spring Data JPA simple repository sample
 [![Actions Status](https://github.com/ingogriebsch/sample-spring-data-jpa-simple-repository/workflows/build/badge.svg)](https://github.com/ingogriebsch/sample-spring-data-jpa-simple-repository/actions)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=de.ingogriebsch.samples%3Asample-spring-data-simple-jpa-repository&metric=alert_status)](https://sonarcloud.io/dashboard?id=de.ingogriebsch.samples%3Asample-spring-data-simple-jpa-repository)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=de.ingogriebsch.samples%3Asample-spring-data-simple-jpa-repository&metric=coverage)](https://sonarcloud.io/dashboard?id=de.ingogriebsch.samples%3Asample-spring-data-simple-jpa-repository)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=de.ingogriebsch.samples%3Asample-spring-data-simple-jpa-repository&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=de.ingogriebsch.samples%3Asample-spring-data-simple-jpa-repository)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=de.ingogriebsch.samples%3Asample-spring-data-simple-jpa-repository&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=de.ingogriebsch.samples%3Asample-spring-data-simple-jpa-repository)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=de.ingogriebsch.samples%3Asample-spring-data-simple-jpa-repository&metric=security_rating)](https://sonarcloud.io/dashboard?id=de.ingogriebsch.samples%3Asample-spring-data-simple-jpa-repository)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=de.ingogriebsch.samples%3Asample-spring-data-jpa-simple-repository&metric=alert_status)](https://sonarcloud.io/dashboard?id=de.ingogriebsch.samples%3Asample-spring-data-jpa-simple-repository)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=de.ingogriebsch.samples%3Asample-spring-data-jpa-simple-repository&metric=coverage)](https://sonarcloud.io/dashboard?id=de.ingogriebsch.samples%3Asample-spring-data-jpa-simple-repository)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=de.ingogriebsch.samples%3Asample-spring-data-jpa-simple-repository&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=de.ingogriebsch.samples%3Asample-spring-data-jpa-simple-repository)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=de.ingogriebsch.samples%3Asample-spring-data-jpa-simple-repository&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=de.ingogriebsch.samples%3Asample-spring-data-jpa-simple-repository)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=de.ingogriebsch.samples%3Asample-spring-data-jpa-simple-repository&metric=security_rating)](https://sonarcloud.io/dashboard?id=de.ingogriebsch.samples%3Asample-spring-data-jpa-simple-repository)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
 This sample shows how to implement a simple repository with Spring Data JPA (and Spring Boot).
