@@ -13,16 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.ingogriebsch.sample.spring.data.jpa.repository;
+package de.ingogriebsch.sample.spring.data.jpa.repository;
 
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+import static lombok.AccessLevel.PACKAGE;
 
-@Repository
-interface PersonRepository extends CrudRepository<Person, Long> {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-    @Transactional(readOnly = true)
-    Iterable<Person> findByName(String name);
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
+@Data
+@Entity
+@EqualsAndHashCode(of = "id")
+@NoArgsConstructor(access = PACKAGE)
+class Person {
+
+    @GeneratedValue
+    @Id
+    private Long id;
+    private String name;
+    private Integer age;
+
+    Person(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
 }

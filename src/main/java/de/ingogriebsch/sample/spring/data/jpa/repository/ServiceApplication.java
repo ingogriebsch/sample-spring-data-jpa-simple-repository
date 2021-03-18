@@ -13,17 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.ingogriebsch.sample.spring.data.jpa.repository;
+package de.ingogriebsch.sample.spring.data.jpa.repository;
 
-import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
+import static org.springframework.boot.SpringApplication.run;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootTest(webEnvironment = RANDOM_PORT)
-class ServiceApplicationTest {
+@SpringBootApplication
+public class ServiceApplication {
 
-    @Test
-    void application_context_should_load() {
+    public static void main(String[] args) {
+        run(ServiceApplication.class, args);
     }
 }

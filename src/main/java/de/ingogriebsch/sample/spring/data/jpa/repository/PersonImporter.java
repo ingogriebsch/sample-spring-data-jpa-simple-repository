@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.github.ingogriebsch.sample.spring.data.jpa.repository;
+package de.ingogriebsch.sample.spring.data.jpa.repository;
 
 import static java.lang.String.format;
 
